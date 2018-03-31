@@ -5,6 +5,12 @@
 	class Administracao extends CI_Controller
 	{
 		
+		function __construct()
+		{
+			if (!$this->session->userdata('usurios')) {
+				redirect();
+			}
+		}
 
 		public function deleta_tarefa($id)
 			{

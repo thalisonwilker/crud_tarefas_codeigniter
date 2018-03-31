@@ -15,4 +15,25 @@
 					$data['view'] = 'tarefa';
 					$this->load->view('layout/index', $data);
 				}
+			public function login()
+				{
+					if ($this->input->post('usuario')) {
+						$usuario = $this->input->post('usuario');
+						$senha = $this->input->post('senha');
+
+						if ($usuario == 'thalison' and $senha == '123') {
+							
+							$usuario = array('logado' => TRUE);
+							$this->session->set_userdata('usuario', $usuario);
+
+							redirect();
+
+						}
+
+
+					}
+					$this->load->helper('form');
+					$data['view'] = 'login';
+					$this->load->view('layout/index', $data);
+				}
 		}
