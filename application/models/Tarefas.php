@@ -29,4 +29,9 @@
 			{
 				return $this->db->insert('tarefas', $tarefa);
 			}
+		public function atualiza_tarefa($id, $tarefa)
+			{
+				$this->db->where('id', $id);
+				return $this->db->update('tarefas', $tarefa);
+			}
 	}
