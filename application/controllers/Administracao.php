@@ -25,7 +25,8 @@
 					$tarefa = array(
 						'titulo' => $this->input->post('titulo'),
 						'descricao' => $this->input->post('descricao'),
-						
+						'privada' => $this->input->post('privada'),
+						'dono' => $this->session->userdata('usuario')['usuario'][0]->id
 					);
 
 					if ($this->Tarefas->adicionar_nova($tarefa)) {
@@ -44,7 +45,8 @@
 
 					$tarefa = array(
 						'titulo' => $this->input->post('titulo'),
-						'descricao' => $this->input->post('descricao')
+						'descricao' => $this->input->post('descricao'),
+						'privada' => $this->input->post('privada')
 					);
 
 					if ($this->Tarefas->atualiza_tarefa($id,$tarefa )) {

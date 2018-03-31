@@ -15,8 +15,13 @@
 		'class' => 'form-control mb-2',
 		'rows' => '3'
 	));
+	?>
 
-	echo form_submit(array(
+	<div class="input-group my-3">
+		<input name="privada" type="checkbox"> Privado
+	</div>
+
+	<?php echo form_submit(array(
 		'class' => 'btn btn-primary btn-lg',
 		'value' => 'Adicionar'
 	));

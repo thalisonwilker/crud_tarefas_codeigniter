@@ -13,6 +13,7 @@
 
 		public function pega_todas()
 			{
+				$this->db->where('privada', NULL);
 				return $this->db->get('tarefas')->result();
 			}
 		public function pega_tarefa($id)
