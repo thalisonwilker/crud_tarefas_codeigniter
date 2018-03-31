@@ -25,4 +25,8 @@
 				$this->db->where('id', $id);
 				return $this->db->delete('tarefas');
 			}
+		public function adicionar_nova($tarefa)
+			{
+				return $this->db->insert('tarefas', $tarefa);
+			}
 	}
