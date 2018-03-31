@@ -20,4 +20,9 @@
 				$this->db->where('id', $id);
 				return $this->db->get('tarefas')->result();
 			}
+		public function deleta_tarefa($id)
+			{
+				$this->db->where('id', $id);
+				return $this->db->delete('tarefas');
+			}
 	}
