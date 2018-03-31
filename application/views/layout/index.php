@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="<?=base_url('assets/css/')?>bootstrap.min.css">
 </head>
 <body>
-	<?php $this->load->view($view) ?>
+	<div class="container">
+		<?php $this->load->view($view) ?>
+	</div>
 </body>
 </html>

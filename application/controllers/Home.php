@@ -36,4 +36,10 @@
 					$data['view'] = 'login';
 					$this->load->view('layout/index', $data);
 				}
+
+			public function logout()
+				{
+					$this->session->sess_destroy();
+					redirect();
+				}
 		}
