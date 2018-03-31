@@ -5,9 +5,10 @@
 	class Administracao extends CI_Controller
 	{
 		
-		function __construct()
+		public function __construct()
 		{
-			if (!$this->session->userdata('usurios')) {
+			parent::__construct();
+			if (!$this->session->userdata('usuario')) {
 				redirect();
 			}
 		}
