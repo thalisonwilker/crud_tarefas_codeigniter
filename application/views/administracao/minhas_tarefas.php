@@ -1,8 +1,8 @@
-<?php echo heading('Tarefas públicas', 2, array(
+<?php echo heading('Minhas tarefas', 2, array(
 	'class' => 'text-center my-2'
 	)); ?>
 
-<?php foreach ($tarefas as $tarefa): ?>
+<?php foreach ($minhas_tarefas as $tarefa): ?>
 	<div class="col-md-9 col-xs-10 mx-auto my-3">
 		<div class="card">
 			<div class="card-header">

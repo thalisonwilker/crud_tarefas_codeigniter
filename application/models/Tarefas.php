@@ -34,4 +34,11 @@
 				$this->db->where('id', $id);
 				return $this->db->update('tarefas', $tarefa);
 			}
+		public function tarefas_do_usuario()
+			{
+				$id = $this->session->userdata('usuario')['usuario'][0]->id;
+				$this->db->where('dono', $id);
+
+				return $this->db->get('tarefas')->result();
+			}
 	}

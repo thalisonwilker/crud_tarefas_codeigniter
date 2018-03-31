@@ -20,6 +20,9 @@
 				<ul class="navbar-nav ml-auto ">
 					<?php if ($this->session->userdata('usuario')){ ?>
 						<li class="nav-item ">
+							<a href="<?=base_url('index.php/administracao/minhas_tarefas')?>" class="nav-link btn btn-primary mr-2 text-white">Minhas tarefas</a>
+						</li>
+						<li class="nav-item ">
 							<a href="<?=base_url('index.php/logout')?>" class="nav-link btn btn-danger mr-2 text-white">Logout</a>
 						</li>
 						<li class="nav-item">
@@ -27,7 +30,10 @@
 						</li>
 					<?php } else { ?>
 					<li class="nav-item">
-						<a href="<?=base_url('index.php/login')?>" class="nav-link btn btn-primary text-white">Login</a>
+						<a href="<?=base_url('index.php/login')?>" class="nav-link btn btn-primary text-white mr-2">Login</a>
+					</li>
+					<li class="nav-item">
+						<a href="<?=base_url('index.php/cadastro')?>" class="nav-link btn btn-primary text-white">Cadastro</a>
 					</li>
 					<?php } ?>
 				</ul>

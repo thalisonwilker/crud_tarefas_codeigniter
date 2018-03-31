@@ -24,7 +24,8 @@
 				if ($this->input->post('titulo')) {
 					$tarefa = array(
 						'titulo' => $this->input->post('titulo'),
-						'descricao' => $this->input->post('descricao')
+						'descricao' => $this->input->post('descricao'),
+						
 					);
 
 					if ($this->Tarefas->adicionar_nova($tarefa)) {
@@ -54,5 +55,12 @@
 				$data['view'] = 'administracao/atualizar_tarefa';
 				$this->load->view('layout/index', $data);
 
+			}
+
+		public function minhas_tarefas()
+			{
+				$data['view'] = 'administracao/minhas_tarefas';
+				$data['minhas_tarefas'] = $this->Tarefas->tarefas_do_usuario();
+				$this->load->view('layout/index', $data);
 			}
 	}

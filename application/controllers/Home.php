@@ -17,18 +17,13 @@
 				}
 			public function login()
 				{
-					if ($this->input->post('usuario')) {
-						$usuario = $this->input->post('usuario');
-						$senha = $this->input->post('senha');
+					if ($this->input->post('username')) {
+						$usuario = $this->input->post('username');
+						$senha = $this->input->post('password');
 
-						if ($usuario == 'thalison' and $senha == '123') {
-							
-							$usuario = array('logado' => TRUE);
-							$this->session->set_userdata('usuario', $usuario);
+						$this->load->model('Usuarios');
 
-							redirect();
-
-						}
+						$this->Usuarios->loga($usuario, $senha);
 
 
 					}
@@ -41,5 +36,24 @@
 				{
 					$this->session->sess_destroy();
 					redirect();
+				}
+
+			public function cadastro()
+				{
+					if ($this->input->post('password')) {
+							$usuario = array(
+								'nome' => $this->input->post('nome'),
+								'username' => $this->input->post('username'),
+								'password' => $this->input->post('nome'),
+							);
+							$this->load->model('Usuarios');
+
+							if ($this->Usuarios->cadastra($usuario)) {
+								redirect();
+							}
+						}
+					$data['view'] = 'cadastro';
+					$this->load->helper('form');
+					$this->load->view('layout/index', $data);	
 				}
 		}
