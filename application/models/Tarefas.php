@@ -15,4 +15,8 @@
 			{
 				return $this->db->get('tarefas')->result();
 			}
+		public function pega_tarefa($id)
+			{
+				return $this->db->get('tarefas')->result();
+			}
 	}

@@ -1,4 +1,4 @@
 <?php foreach ($tarefas as $tarefa): ?>
-	<a href="#"><?=$tarefa->titulo?></a>
+	<a href="<?=base_url('index.php/tarefa/') . $tarefa->id?>"><?=$tarefa->titulo?></a>
 	<p><?=$tarefa->descricao?></p>
 <?php endforeach ?>
