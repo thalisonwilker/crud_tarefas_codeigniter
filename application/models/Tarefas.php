@@ -17,6 +17,7 @@
 			}
 		public function pega_tarefa($id)
 			{
+				$this->db->where('id', $id);
 				return $this->db->get('tarefas')->result();
 			}
 	}
